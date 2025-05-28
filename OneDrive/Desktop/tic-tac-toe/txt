@@ -1,0 +1,7 @@
+
+      // const boxIndex = prevBoxes.find(el => el.index === index);
+      // if (boxIndex) {
+      //   return prevBoxes;
+      // }
+      // setPlayerTurn(playerTurn === playersConstant.PLAYER1 ? playersConstant.PLAYER2 : playersConstant.PLAYER1);
+      // return [...prevBoxes, { player: playerTurn, index }];
