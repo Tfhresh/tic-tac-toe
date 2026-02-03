@@ -93,29 +93,29 @@ const Footer = () => {
     <>
       <div className="bg-slate-100 px-10 ">
         <div className="border-b-2">
-          <div className="flex items-center gap-8 ">
-            <div className="py-2  px-4 my-7 border-r border-slate-300">
+          <div className="flex items-start min-[1190px]:items-center min-[1190px]:gap-8 gap-4 min-[1190px]:flex-row flex-col py-7">
+            <div className="py-2 min-[1190px]:px-4 border-r border-slate-300 max-[1190px]:flex-1">
               <Image src="/logo.png" alt="AppLogo" width={200} height={200} />
             </div>
-            <div className="flex px-4 my-7 py-2 gap-2.5 items-center">
+            <div className="flex min-[1190px]:px-4 py-2 gap-2 items-center">
               <div className="size-15  rounded-full bg-red-500 text-white flex items-center justify-center">
-                <LocateIcon size={25} />
+                <LocateIcon className="min-[1190px]:size-[25px] size-4" />
               </div>
               <div className="leading-7">
                 <p className="font-bold text-xl">Our Clinic Address</p>
                 <p className=" font-medium">456, Lorem Street, USA</p>
               </div>
             </div>
-            <div className="flex px-4 py-2 gap-2.5 items-center">
+            <div className="flex min-[1190px]:px-4 py-2 gap-2 items-center">
               <div className="size-15  rounded-full bg-red-500 text-white flex items-center justify-center">
-                <Phone size={25} />
+                <Phone className="min-[1190px]:size-[25px] size-4" />
               </div>
               <div className="leading-7 text-center">
                 <p className="font-bold text-xl">Phone Number</p>
                 <p className=" font-medium">(+00)888.666.88</p>
               </div>
             </div>
-            <div className=" ml-auto">
+            <div className=" min:[1190px]:ml-auto">
               <ul className="flex gap-7 items-center justify-center  ">
                 <li className="cursor-pointer bg-white p-3 rounded-full hover:bg-red-500 hover:text-white ">
                   <Link href={""} >
@@ -141,8 +141,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-10 flex mx-auto px-4 gap-5 ">
-          <div className="w-[300px]">
+        <div className="py-10 flex max-[1190px]:flex-wrap max-md:flex-col mx-auto px-4 gap-5 ">
+          <div className="md:w-[300px] shrink-0">
             <div className="text-2xl font-semibold">Information</div>
             <div className="flex flex-wrap gap-2 leading-8 font-medium mt-4">
               {INFORMATION_LINK.map(el => <Link key={el.text} href={el.link} className="w-[calc((100%-8px)/2)] flex items-center gap-3  hover:text-red-500 text-sm">
@@ -151,33 +151,36 @@ const Footer = () => {
               </Link>)}
             </div>
           </div>
-          <div className="" >
+          <div className="md:w-[300px]" >
             <div className="text-2xl font-semibold mb-4 ">Latest News</div>
-            {latestNews.map(el => <div key={el.title} className="flex justify-center gap-2 ">
-              <Image src={el.img} alt="news-image" width={40} height={40} className="rounded-full object-cover object-fit" />
-              <div>
-                <div className="text-base capitalize tracking-wide">{el.title}</div>
-                <p>{el.description}</p>
+            {latestNews.map(el => <div key={el.title} className="flex gap-2 mb-2">
+              <div className="relative size-10">
+                <Image src={el.img} alt="news-image" 
+                fill className="rounded-full object-cover" />
+              </div>
+              <div className="">
+                <div className="capitalize tracking-wide mb-0.5 text-sm">{el.title}</div>
+                <p className="text-slate-500 text-xs">{el.description}</p>
               </div>
             </div>)}
           </div>
-          <div className="w-[25%]">
+          <div className="min-[1000px]:w-[25%] md:w-fit max-md:order-3">
             <div className="text-2xl font-semibold mb-4  ">Newsletter</div>
             <p className="whitespace-break-spaces ">Sign up today for hints, tips and the latest product news</p>
-            <input type="text" placeholder="Your email address" className="rounded p-4 pr-7 mt-4 border-none outline-none placeholder:text-slate-400 placeholder:text-[17px] bg-white " />
+            <input type="text" placeholder="Your email address" className="max-md:w-full rounded p-4 pr-7 mt-4 border-none outline-none placeholder:text-slate-400 placeholder:text-[17px] bg-white " />
             <Button className="text-white hover:bg-red-500 py-6 px-8 text-[13px] font-semibold transition-all duration-500 cursor-pointer text-center mt-4">SUBMIT</Button>
           </div>
-          <div className="w-[25%]">
+          <div className="md:w-fit">
             <div className="text-2xl font-semibold mb-4 ">Opening Hours</div>
-            <div className="flex  gap-2 leading-10  ">
-              <div className="w-full font-medium">
+            <div className="flex  gap-4">
+              <div className=" font-medium space-y-2 text-sm">
                 <p>Mon - Tue</p>
                 <p>Wed - Thur</p>
                 <p>Fri - Sat</p>
                 <p>Saturday</p>
                 <p>Sunday</p>
               </div>
-              <div className="w-full text-red-500 font-semibold text-right">
+              <div className=" text-red-500 font-semibold text-right space-y-2 text-sm">
                 <p>10:00 - 18:00</p>
                 <p>10:00 – 17:00</p>
                 <p>10:00 - 12:30</p>
@@ -188,9 +191,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-red-500 text-white flex p-10 px-12 items-center text-sm font-medium">
+      <div className="bg-red-500 text-white flex max-md:flex-col p-10 px-12 md:items-center text-sm font-medium">
         <div>Copyright © 2025 Cardioly Demo3, All Rights Reserved.</div>
-        <div className="ml-auto flex justify-center items-center gap-5">
+        <div className="md:ml-auto flex md:justify-center items-center gap-5 max-md:mt-5">
           <Link href={""}>FAQ</Link>
           <Link href={""}>About Us </Link>
           <Link href={""}>Contact Us</Link>

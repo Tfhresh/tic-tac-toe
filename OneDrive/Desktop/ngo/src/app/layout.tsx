@@ -19,7 +19,7 @@ export default function RootLayout({
         className={``}
       >
         {children}
-        {/* <Footer/> */}
+        <Footer/>
       </body>
     </html>
   );

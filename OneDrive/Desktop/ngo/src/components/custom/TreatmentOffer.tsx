@@ -6,17 +6,21 @@ icon?: React.ReactNode;
  description: string| React.ReactNode;
  titleClassName?: string;
  descriptionClassName ?: string;
- iconClassName ?:string
+ iconClassName ?:string;
+ className?: string;
 }
-const TreatmentOffer = ({ title,
+const TreatmentOffer = ({ 
+  title,
+  className,
    icon,description 
    ,titleClassName,
    descriptionClassName,
    iconClassName
   }:props) => {
   return (
-    <div className={"flex gap-5 items-center "}>
-      <div className={cn("rounded-full flex items-center justify-center bg-red-500 text-white p-7",iconClassName)}>
+    <div className={cn("flex gap-5 items-center", className)}>
+      <div className={cn(
+        "rounded-full flex items-center justify-center bg-red-500 text-white p-7",iconClassName)}>
         {icon}
       </div>
       <div >
