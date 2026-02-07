@@ -91,7 +91,7 @@ const Footer = () => {
   // }, [])
   return (
     <>
-      <div className="bg-slate-100 px-10 ">
+      <div className="bg-slate-100 md:px-10 px-3">
         <div className="border-b-2">
           <div className="flex items-start min-[1190px]:items-center min-[1190px]:gap-8 gap-4 min-[1190px]:flex-row flex-col py-7">
             <div className="py-2 min-[1190px]:px-4 border-r border-slate-300 max-[1190px]:flex-1">
@@ -191,7 +191,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-red-500 text-white flex max-md:flex-col p-10 px-12 md:items-center text-sm font-medium">
+      <div className="bg-red-500 text-white flex max-md:flex-col p-10 md:px-12 px-3 md:items-center text-sm font-medium">
         <div>Copyright © 2025 Cardioly Demo3, All Rights Reserved.</div>
         <div className="md:ml-auto flex md:justify-center items-center gap-5 max-md:mt-5">
           <Link href={""}>FAQ</Link>

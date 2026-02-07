@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const TeamCardContent = ({ title, description }: { title: string; description: string }) => {
   return (
-    <div className="bg-white rounded-bl-sm rounded-br-sm pt-10 pb-8   text-center w-[calc(100%+33px)]">
+    <div className="z-99999 relative bg-white rounded-bl-sm rounded-br-sm pt-10 pb-8   text-center w-[calc(100%+33px)]">
       <div className=" w-1/2 mx-auto bg-red-500 -translate-y-10 text-white text-center uppercase font-semibold rounded-bl-md rounded-br-md  p-2.5  text-[13px]">
         {title}
       </div>
