@@ -21,43 +21,27 @@ export default function AboutPage() {
     {
       id: 1,
       img: "/commentImg2.jpg",
-      comment: "The Heart care hospital  specialist doctor were manage my heart surgery",
+      comment: "The Heart care hospital  specialist doctor were manage my heart surgery1",
       name: "Roma Charles",
       jobTitle: "-Heart blockage"
     },
     {
       id: 2,
       img: "/commentImg.jpg",
-      comment: "The Heart care hospital  specialist doctor were manage my heart surgery",
+      comment: "The Heart care hospital  specialist doctor were manage my heart surgery2",
       name: "Roma Charles",
       jobTitle: "-Heart blockage"
     },
     {
       id: 3,
       img: "/commentImg3.jpg",
-      comment: "The Heart care hospital  specialist doctor were manage my heart surgery",
+      comment: "The Heart care hospital  specialist doctor were manage my heart surgery3",
       name: "Roma Charles",
       jobTitle: "-Heart blockage"
     },
   ]
 
   const [navigateBox, setNavigateBoxes] = useState(1)
-  function toNavigateBoxes(id: number) {
-    const findBoxes = commentBoxes.findIndex(el => el.id === id)
-    if (findBoxes) {
-      setNavigateBoxes(findBoxes)
-    }
-    return findBoxes
-  }
-
-  console.log((navigateBox));
-
-  //  const steps = commentBoxes;
-  //  const next  = ()=> navigateBox < 2 && setNavigateBoxes(s =>s + 1)
-  //  function toNavigateBoxes (id:number){
-  //   if((navigateBox <= 1 && commentBoxes.length === 1) || navigateBox >=3  ) return
-  //   setNavigateBoxes(id)
-  //  }
 
 
 
@@ -99,7 +83,7 @@ export default function AboutPage() {
 
         <div className="w-[calc(50%-24px)] max-[900px]:w-full">
           <p className="text-red-500 mb-2 uppercase text-sm font-semibold tracking-widest pt-10">_What We Offer_</p>
-          <p className="text-5xl font-bold leading-14">
+          <p className="lg:text-5xl text-3xl font-bold lg:leading-14">
             Provide Best Healthcare and Heart Specialist</p>
           <p className="text-slate-400 leading-7 my-5">Quickly response provide our specialist doctrors to patients in online conference. We help all heart patients and also provide .</p>
           <div className="border-b flex max-sm:flex-col gap-5 pb-6">
@@ -171,64 +155,67 @@ export default function AboutPage() {
           <div className="text-slate-400">If you have been diagnosed or suspect a heart condition our team of cardiologist
             are available to help at several convenient locations.</div>
         </div>
-        <div className="z-60 relative px-12 flex gap-8 justify-center items-center bg-transparent">
-          <div className="relative z-40">
-            <TeamCard src="/teamImg1.jpg" imgClassName="rounded-tl-sm rounded-tr-sm" />
-            <TeamCardContent title="Cardiologist" description="Dr. anna willey" />
-          </div>
-          <div className="relative z-40">
-            <TeamCard src="/teamImg2.jpg" imgClassName="rounded-tl-sm rounded-tr-sm" />
-            <TeamCardContent title="Assistant Surgeon" description="Dr. edward berry" />
-          </div>
-          <div className="relative z-40">
-            <TeamCard src="/teamImg3.jpg" imgClassName="rounded-tl-sm rounded-tr-sm" />
-            <TeamCardContent title="Medical Specialist" description="Dr. eliza william" />
-          </div>
+        <div className="z-60 relative md:px-12 px-6 flex max-sm:flex-col gap-8 justify-center items-center bg-transparent">
+          <TeamCard
+            src="/teamImg1.jpg"
+            title="Cardiologist" description="Dr. anna willey"
+          />
+          <TeamCard
+            src="/teamImg2.jpg"
+            title="Assistant Surgeon" description="Dr. edward berry"
+          />
+            <TeamCard 
+            src="/teamImg3.jpg"  
+            title="Medical Specialist" description="Dr. eliza william"
+            />
         </div>
-        <div className="bg-gray-100 pt-[400px] -mt-[188px] relative z-70">
+        <div className="bg-gray-100 pt-[150px] -mt-[104px] relative z-10">
           <div className="my-4">
             <CardioImages />
           </div>
         </div>
-        {/* <div className="-mt-4 relative">
+        <div className="-mt-4 relative w-full ">
           <Image src="/serviceImg1.jpg" className="w-full h-[500px] object-cover object-center " alt="" width={400} height={400} />
-          <div className={cn("absolute top-1/2 -translate-y-1/2 right-10 rounded-sm bg-black text-white ",)}>
+          <div className={cn("rounded-sm bg-black text-white pr-5",)}>
             {commentBoxes.map((el) => {
-              return <div key={el.id} className={cn("flex gap-4", navigateBox === el.id ? "block" : "hidden")}>
+              return <div key={el.id} className={cn(" gap-4", navigateBox === el.id ? "flex" : "hidden")}>
                 <div><Image src={el.img} alt="" width={160} height={160} /></div>
-                <div>
+                <div className="flex flex-col justify-center ">
                   <p>{el.comment}</p>
                   <p>{el.name}</p>
                   <span>{el.jobTitle}</span>
-                  <div className="flex gap-2 relative">
+                  <div className="flex justify-end gap-2 relative">
+                    {Array.from(Array(commentBoxes.length)).map((_, index)=> <button
+                    key={index}
+                      onClick={() => setNavigateBoxes(index+1)}
+                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer" 
+                      />)}
+                    {/* <button
+                      onClick={() => setNavigateBoxes(el.id)}
+                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer" 
+                      />
                     <button
-                      onClick={() => toNavigateBoxes(el.id)}
-                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer"></button>
-                    <button
-                      onClick={() => toNavigateBoxes(el.id)}
-                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer"></button>
-                    <button
-                      onClick={() => toNavigateBoxes(el.id)}
-                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer"></button>
+                      onClick={() => setNavigateBoxes(el.id)}
+                      className="bg-gray-500 size-3.5 rounded-full cursor-pointer" 
+                      /> */}
                   </div>
                 </div>
               </div>
             })}
           </div>
-        </div> */}
+        </div>
       </div>
-      {/*
-      <div className="px-10 my-25">
+      <div className="px-10 my-25 max-md:text-center">
         <p className="text-red-500 mt-4 font-semibold uppercase text-sm tracking-wide">_Read Our Blog_</p>
-        <div className="flex ">
+        <div className="flex max-md:flex-col max-md:items-center">
           <div className="text-4xl flex-1 font-bold tracking-wider">Featured News and Advices</div>
           <div className="flex-1 px-7">We provide the special tips and advice’s of heath care treatment and high level of best technology involve in the our hospital.</div>
         </div>
-        <div className="flex  gap-7 my-10">
+        <div className="flex max-md:flex-col gap-7 my-10">
           <AboutBlogCard
             src="/blog1.jpg"
             title={<>
-              <div className="text-3xl font-bold leading-9">27</div>
+              <div className="lg:text-3xl text-xl font-bold leading-9">27</div>
               <p className="uppercase font-medium text-sm">Aug</p>
             </>}
             linkTitle="Treatment"
@@ -252,7 +239,7 @@ export default function AboutPage() {
             linkTitle="discount"
             linkCaption="Get the Exercise Tips for Limited Mobility" />
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
