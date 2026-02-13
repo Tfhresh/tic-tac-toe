@@ -9,7 +9,8 @@ type props = {
   description?: string
   descriptionClassName?: string;
   titleClassName?: string;
-  imgContentClassName?: string
+  imgContentClassName?: string;
+  className?: string;
 }
 const TeamCard = ({
   src,
@@ -18,10 +19,11 @@ const TeamCard = ({
   description,
   descriptionClassName,
   titleClassName,
-  imgContentClassName
+  imgContentClassName,
+  className
 }: props) => {
   return (
-    <div className="flex-1 max-sm:w-full pb-10 relative z-[99999] shadow bg-white rounded-sm">
+    <div className={cn("flex-1 max-sm:w-full pb-10 relative z-[99999] shadow bg-white rounded-sm", className)}>
       <div className="relative h-[300px]">
         <Image
           src={src}

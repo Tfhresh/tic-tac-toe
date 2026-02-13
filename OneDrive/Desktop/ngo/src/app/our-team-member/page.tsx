@@ -73,28 +73,51 @@ const page = () => {
           <div className='text-4xl font-bold  '>Our Team Member</div>
           <Link href={""} className=' text-sm font-semibold '>CARDIOLY </Link><span className='uppercase text-sm font-medium'>- Our Team Member</span>
         </div>} />
-      <div className={cn("max-w-[1200px] w-full p-4 my-10 grid mx-auto    grid-cols-3  grid-rows-2 gap-8 ", hover)}>
-        {spiltImages.map(el => <div key={el.id} className="relative overflow-hidden group">
-          <TeamCard
-            title={el.title}
-            description={el.description}
-            src={el.src}
-            imgContentClassName="text-center my-4 relative"
-            imgClassName=" rounded-sm object-cover" 
+      {/* <div className={cn("max-w-[1200px] w-full p-4 my-10 grid mx-auto    grid-cols-3  grid-rows-2 gap-8 ", hover)}>
+        {spiltImages.map(el =>
+          <div key={el.id} className="relative overflow-hidden group">
+            <TeamCard
+              title={el.title}
+              description={el.description}
+              src={el.src}
+              imgContentClassName="text-center my-4 relative"
+              imgClassName=" rounded-sm object-cover"
             />
-          <div className={cn("rounded-r-sm absolute top-0 -right-20 group-hover:right-0 bg-red-500 py-26 px-5 space-y-4  flex justify-center items-center flex-col text-white transition-all duration-500 ")}>
-            <Link href={""} >
-              {el.linkIcon1}
-            </Link>
-            <Link href={""}>
-              {el.linkIcon2}
-            </Link>
-            <Link href={""}>
-              {el.linkIcon3}
-            </Link>
+            <div className={cn("rounded-r-sm absolute top-0 -right-20 group-hover:right-0 bg-red-500 py-26 px-5 space-y-4  flex justify-center items-center flex-col text-white transition-all duration-500 ")}>
+              <Link href={""} >
+                {el.linkIcon1}
+              </Link>
+              <Link href={""}>
+                {el.linkIcon2}
+              </Link>
+              <Link href={""}>
+                {el.linkIcon3}
+              </Link>
+            </div>
           </div>
-        </div>)}
-      </div>
+        )
+        }
+      </div> */}
+      <div className="py-20 relative md:px-12 px-6 flex flex-wrap max-sm:flex-col gap-8 justify-center items-center bg-transparent">
+          <TeamCard
+            src="/teamImg1.jpg"
+            title="Cardiologist" description="Dr. anna willey"
+            // className="flex-0"
+            className="w-[350px]!"
+          />
+          <TeamCard
+            src="/teamImg2.jpg"
+            title="Assistant Surgeon" description="Dr. edward berry"
+            // className="flex-0"
+            className="w-[350px]!"
+          />
+            <TeamCard 
+            src="/teamImg3.jpg"  
+            title="Medical Specialist" description="Dr. eliza william"
+            // className="flex-0"
+            className="w-[350px]!"
+            />
+        </div>
       {/* <div className="bg-gray-100">
         <div className="px-12 flex gap-8">
           <TeamCardContent

@@ -20,8 +20,8 @@ const AccordionQuestion = ({ value }: { value: string; }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <AccordionItem value={value} className="w-[calc(50%-20px)]">
-      <AccordionTrigger onClick={() => setIsOpen(!isOpen)} className="flex items-center hover:cursor-pointer hover:no-underline border pl-5 pr-3">
+    <AccordionItem value={value} className="md:w-[calc(50%-20px)] w-full">
+      <AccordionTrigger onClick={() => setIsOpen(!isOpen)} className="flex items-center hover:cursor-pointer hover:no-underline border pl-5 pr-3 w-full">
         <div className="font-bold text-base ">
           How can I book the appointment date?
         </div>
@@ -53,14 +53,16 @@ const page = () => {
       {/*cardiology common question section */}
       <section className="my-10 ">
         <div className="space-y-3 text-center">
-          <div className="text-red-500  font-semibold uppercase text-sm tracking-widest ">_Common Questions_</div>
-          <div className="text-4xl font-bold">Cardiology Common Questions</div>
-          <p className="w-[52%] m-auto  text-center text-slate-500">
-            You will find answers to about our latest technologies and health care specialists service and
-            more. Please feel free to contact us if you don&apos;t get your question&apos;s answer in below.
-          </p>
+          <div className="max-w-[800px] mx-auto w-full px-2.5">
+            <div className="text-red-500  font-semibold uppercase text-sm tracking-widest ">_Common Questions_</div>
+            <div className="lg:text-4xl text-2xl font-bold">Cardiology Common Questions</div>
+            <p className="text-center text-slate-500">
+              You will find answers to about our latest technologies and health care specialists service and
+              more. Please feel free to contact us if you don&apos;t get your question&apos;s answer in below.
+            </p>
+          </div>
         </div>
-        <Accordion type="single" collapsible className="flex flex-wrap my-10 gap-10 px-10">
+        <Accordion type="single" collapsible className="flex flex-wrap my-10 md:gap-10 gap-4 md:px-10 px-5">
           {Array.from(new Array(10)).map((_, index) => <AccordionQuestion key={index} value={`item${index + 1}`} />)}
         </Accordion>
       </section>
@@ -68,13 +70,15 @@ const page = () => {
       <section>
         <div className="space-y-3 text-center">
           <div className="text-red-500  font-semibold uppercase text-sm tracking-widest ">_General Question_</div>
-          <div className="text-4xl font-bold">Frequently Asked Questions</div>
-          <p className="w-[52%] m-auto  text-center text-slate-500">
-            You will find answers to about our latest technologies and health care specialists service and
-            more. Please feel free to contact us if you don&apos;t get your question&apos;s answer in below.
-          </p>
+          <div className="max-w-[800px] mx-auto w-full px-2.5">
+            <div className="lg:text-4xl text-2xl font-bold">Frequently Asked Questions</div>
+            <p className=" text-center text-slate-500 max-sm:text-xs">
+              You will find answers to about our latest technologies and health care specialists service and
+              more. Please feel free to contact us if you don&apos;t get your question&apos;s answer in below.
+            </p>
+          </div>
         </div>
-        <div className="px-10 my-20">
+        <div className="lg:px-10 px-5 my-20">
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1">
               <AccordionTrigger className=" flex  items-center hover:cursor-pointer hover:no-underline border pl-5 pr-3">
